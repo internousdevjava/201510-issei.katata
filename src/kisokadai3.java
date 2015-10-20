@@ -1,4 +1,4 @@
-//java.io.*でFileクラスとかFileWriterとか全部使えるようにする
+//java.io.*でFi  leクラスとかFileWriterとか全部使えるようにする
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -20,9 +20,9 @@ public class kisokadai3
 			}
 			if(x==1){
 				try{
-					System.out.println("ディレクトリを指定してください");
-					System.out.println("以下のようにファイル名を記載してください");
-					System.out.println("例 - C:/Users//internous//test.txt");
+					System.out.println("新規作成したい場所を指定＋ファイル名＋拡張子");
+					System.out.println("＝の後に、以下の例のように記載してください。");
+					System.out.println("例 =C:/Users//internous//test.txt");
 					System.out.print("=");
 					String sakusei=br.readLine();
 					File file = new File(sakusei); //ファイルの存在チェック、作成用
