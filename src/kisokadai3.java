@@ -28,15 +28,15 @@ public class kisokadai3
 					File file = new File(sakusei); //ファイルの存在チェック、作成用
 					File dir = new File(file.getParent()); //ディレクトリの存在チェック、作成用
 					if(dir.exists()){ //ディレクトリが存在しているかチェック
-						System.out.println("ディレクトリが存在します、Menuに戻ります。");
+						System.out.println("ディレクトリは存在します。");
 					}else{
-						System.out.println("新しくディレクトリを作成します");
+						System.out.println("新しくディレクトリを作成しました。");
 						dir.mkdir(); // ディレクトリ作成
 					}
 					if(file.exists()){ //ファイルが存在しているかチェック
-						System.out.println("ファイルが存在します、Menuに戻ります。");
+						System.out.println("ファイルは存在します。");
 					}else{
-						System.out.println("新しくファイルを作成します");
+						System.out.println("新しくファイルを作成しました。");
 						try{
 							file.createNewFile(); //ファイル作成
 						}catch(Exception e){
@@ -49,8 +49,9 @@ public class kisokadai3
 			}
 			if(x==2){
 				try{
-					System.out.println("以下のようにファイル名を記載してください");
-					System.out.println("例 - C:/Users//internous//test.txt");
+					System.out.println("読み込みしたい場所を指定＋ファイル名＋拡張子");
+					System.out.println("＝の後に、以下の例のように記載してください。");
+					System.out.println("例 =C:/Users//internous//test.txt");
 					System.out.print("=");
 					String yomikomi=br.readLine();
 					BufferedReader fileread = new BufferedReader(new FileReader(new File(yomikomi))); //指定ファイルをまとめて読み込み
@@ -68,13 +69,19 @@ public class kisokadai3
 			}
 			if(x==3){
 				int j = 0; //選択の保存用
-				System.out.println("以下のようにファイル名を記載してください");
-				System.out.println("例 - C:/Users//internous//test.txt");
+				System.out.println("書き込みしたい場所を指定＋ファイル名＋拡張子");
+				System.out.println("＝の後に、以下の例のように記載してください。");
+				System.out.println("例 =C:/Users//internous//test.txt");
 				System.out.print("=");
 				String kakikomi="";
 				try{
 					kakikomi=br.readLine();
 				}catch(Exception e){
+				}
+				File checkfile = new File(kakikomi);
+				if(!checkfile.exists()){
+					System.out.println("そのファイルは存在しません。");
+					continue;
 				}
 				while(j != 3){
 					try{
