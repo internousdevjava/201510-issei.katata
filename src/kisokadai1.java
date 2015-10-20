@@ -9,7 +9,7 @@ public class kisokadai1
                 InputStreamReader isr = new InputStreamReader(System.in);
                 BufferedReader br = new BufferedReader(isr);
                 try{
-                	System.out.println("xに0以上、100以下の数字を入力してください、それ以外は0になります");
+                	System.out.println("xに1以上、100以下の数字を入力してください、それ以外は0になります");
                     System.out.print("x= ");
                         String buf = br.readLine();
                           x = Integer.parseInt(buf);
